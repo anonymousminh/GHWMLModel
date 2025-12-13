@@ -12,3 +12,11 @@ def preprocess_data(df, target_cols):
 
     numeric_pipeline = SimpleImputer(strategy='median')
     categorical_pipeline = OneHotEncoder(handle_unknown='ignore')
+
+    preprocesser = ColumnTransformer(
+        transformers=[
+            ('num', StandardScaler(), num_cols),
+            ('cat', categorical_pipeline, cat_cols)
+        ]
+    )
+    return preprocesser, X
