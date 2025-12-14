@@ -1,7 +1,7 @@
 import pandas as pd
 
-def load_standard_data(path):
-    df = pd.read_csv('../data/Student_Performance_Dataset.csv')
+def load_standard_data():
+    df = pd.read_csv('data/Students_Performance_Dataset.csv')
     allowed_columns = [
         'Attendance (%)',
         'Midterm_Score',
@@ -11,8 +11,8 @@ def load_standard_data(path):
     ]
     return df[allowed_columns]
 
-def load_biased_data(path):
-    df = pd.read_csv('../data/Student_Performance_Dataset.csv')
+def load_biased_data():
+    df = pd.read_csv('data/Students_Performance_Dataset.csv')
     biased_allowed_columns = [
         'Attendance (%)',
         'Midterm_Score',
